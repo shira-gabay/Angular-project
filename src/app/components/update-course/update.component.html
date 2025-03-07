@@ -1,0 +1,24 @@
+<h2>Update Course</h2>
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Course Title</mat-label>
+    <input matInput formControlName="title" placeholder="Enter course title">
+    @if(updateForm.get('title')?.hasError('required') && updateForm.get('title')?.touched) {
+      <mat-error>Title is required.</mat-error>
+    }
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Course Description</mat-label>
+    <textarea matInput formControlName="description" placeholder="Enter course description"></textarea>
+    @if(updateForm.get('description')?.hasError('required') && updateForm.get('description')?.touched) {
+      <mat-error>Description is required.</mat-error>
+    }
+  </mat-form-field>
+  
+  <div class="button-group">
+    <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid">
+      Update Course
+    </button>
+  </div>
+</form>

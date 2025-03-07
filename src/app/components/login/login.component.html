@@ -1,0 +1,36 @@
+<div class="example-button-row">
+    <button (click)="chekSubmit()" mat-raised-button>Login</button>
+  </div>
+  @if(showForm==true){
+    <form [formGroup]="loginInForm" (ngSubmit)="onSubmit()">
+      <mat-dialog-actions >
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>דוא"ל</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="הכנסי דואל">
+        @if (valid['email'] && valid['email'].errors && valid['email'].touched) {
+          @if(valid['email'].errors['required']) {
+            <mat-error>email is required</mat-error>
+          }
+          @if(valid['email'].errors['email']) {
+            <mat-error>email is not valid </mat-error>
+          }
+        }
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>סיסמה</mat-label>
+        <input matInput id="password" type="password" formControlName="password" placeholder="הכנסי סיסמה">
+        @if (valid['password'] && valid['password'].errors && valid['password'].errors['required']) {
+            <mat-error>email is required</mat-error>
+        }
+        @if (valid['password'] && valid['password'].errors && valid['password'].errors['minlength']) {
+            <mat-error>email is required</mat-error>
+        }
+    </mat-form-field>
+      
+        <div>
+        <button (click)="cheklogin()" type="submit">send</button>
+      </div>
+    </mat-dialog-actions>
+    </form>
+
+}

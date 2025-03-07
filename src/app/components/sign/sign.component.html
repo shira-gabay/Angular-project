@@ -1,0 +1,75 @@
+<div class="auth-container">
+    <div class="example-button-row">
+      <button (click)="chekSubmit()" mat-raised-button color="primary">Sign</button>
+    </div>
+  
+    @if(showForm==true){
+      <form class="styled-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <mat-dialog-actions >
+        <!-- שדה שם -->
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>שם</mat-label>
+            <input matInput id="name" type="text" formControlName="name" placeholder="הכנסי שם">
+          </mat-form-field>
+        </div>
+        
+        <!-- שדה דוא"ל -->
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>דוא"ל</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="הכנסי דוא">
+          </mat-form-field>
+          @if (valid['email'] && valid['email'].errors && valid['email'].touched) {
+            @if (valid['email'].errors['required']) {
+              <div class="error-message">דוא"ל הוא שדה חובה</div>
+            }
+            @if (valid['email'].errors['email']) {
+              <div class="error-message">דוא"ל לא חוקי</div>
+            }
+          }
+        </div>
+        
+        <!-- שדה סיסמה -->
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>סיסמה</mat-label>
+            <input matInput id="password" type="password" formControlName="password" placeholder="הכנסי סיסמה">
+          </mat-form-field>
+          @if (valid['password'] && valid['password'].errors && valid['password'].touched) {
+            @if (valid['password'].errors['required']) {
+              <div class="error-message">סיסמה היא שדה חובה</div>
+            }
+            @if (valid['password'].errors['minlength']) {
+              <div class="error-message">הסיסמה חייבת להיות לפחות 6 תווים</div>
+            }
+          }
+        </div>
+        
+        <!-- שדה בחירת תפקיד -->
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>תפקיד</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value="" disabled>בחר/י תפקיד</mat-option>
+              <mat-option value="user">משתמש</mat-option>
+              <mat-option value="teacher">מורה</mat-option>
+              <mat-option value="admin">מנהל</mat-option>
+            </mat-select>
+          </mat-form-field>
+          @if (valid['role'] && valid['role'].errors && valid['role'].touched) {
+            @if (valid['role'].errors['required']) {
+              <div class="error-message">תפקיד הוא שדה חובה</div>
+            }
+          }
+        </div>
+        
+        <!-- כפתור לשליחת הטופס -->
+        <div class="submit-button">
+          <button (click)="cheklogin()" type="submit" mat-raised-button color="accent" [disabled]="signInForm.invalid">send</button>
+        </div>
+      </mat-dialog-actions>
+      </form>
+    }
+  </div>
+  

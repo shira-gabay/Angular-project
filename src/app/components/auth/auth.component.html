@@ -1,0 +1,16 @@
+<div class="auth-container">
+
+   @if(isLogin==true)
+   {
+    <div class="avatar" >
+        <span class="avatar-text">{{avattarletter}}</span>
+    </div>
+   
+   }
+    <app-sign class="register"  (signSubmit)="handleSignSubmit($event)"></app-sign>
+    <app-login class="register"  (loginSubmit)="handleLoginSubmit($event.email,$event.password)"></app-login>
+  
+  </div>
+@if(isLogin==true){
+    <app-home-page></app-home-page>
+  }

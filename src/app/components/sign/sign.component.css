@@ -1,0 +1,80 @@
+
+  
+  /* כפתור ראשוני להצגת הטופס */
+  .example-button-row {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* עיצוב לטופס עצמו */
+  .styled-form, form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* כל שדה בטופס */
+  .form-field {
+    width: 100%;
+  }
+  
+  /* עיצוב ל-mat-form-field */
+  mat-form-field.full-width {
+    width: 100%;
+  }
+  
+  /* תוויות */
+  mat-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  /* עיצוב לשדות הקלט */
+  input[matInput],
+  mat-select {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    color: #333;
+    font-weight: 600;  /* טקסט מודגש יותר */
+  }
+  
+  /* הודעות שגיאה – קרובות יותר לשדה, עם צבע אדום עמוק וטקסט מודגש */
+  .error-message,
+  mat-error {
+    color: #c62828;
+    font-size: 12px;
+    margin-top: 2px; /* פחות מרווח, קרוב יותר לשדה */
+    font-weight: bold;
+  }
+  
+  /* עיצוב לכפתור השליחה */
+  .submit-button {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  button[mat-raised-button] {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color:black;
+    color: #00dddd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #00dddd;
+    color:#444;
+  }
+  
