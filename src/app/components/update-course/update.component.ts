@@ -63,14 +63,10 @@ export class UpdateComponent implements OnInit {
       if (this.userService.currentUser.role === "teacher") {
         console.log('Form Value:', this.updateForm.value);
         console.log('Course ID:', this.data.id);
-
-
         this.coursService.currenrCours.id = this.data.id;
         this.coursService.currenrCours.description = this.updateForm.value.description;
         this.coursService.currenrCours.title = this.updateForm.value.title;
         this.coursService.currenrCours.teacherId = this.userService.currentUser.id;
-
-
         this.coursService.updateCourse(this.coursService.currenrCours.id,this.coursService.currenrCours).subscribe(
           (res: any) => {
             console.log('Course updated successfully:', res);

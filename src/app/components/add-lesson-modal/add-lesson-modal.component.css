@@ -1,0 +1,121 @@
+/* Modal Header */
+.modal-header {
+    background-color: #008080; /* טורכיז כהה */
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .close {
+    color: #ffffff;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  
+  .close:hover {
+    opacity: 1;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    background-color: #f0f8ff; /* רקע טורכיז בהיר */
+    color: #000000;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #008080;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #008080;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-label {
+    color: #008080;
+  }
+  
+  .mat-input-element {
+    color: #000000;
+  }
+  
+  .mat-error {
+    color: #ff0000;
+  }
+  
+  /* Button Styling */
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+  
+  .mat-raised-button {
+    background-color: #008080; /* טורכיז */
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mat-raised-button:hover {
+    background-color: #006d62; /* כהה יותר בעת ריחוף */
+  }
+  
+  .mat-raised-button[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+  }
+  
+  /* Modal Footer */
+  .modal-footer {
+    background-color: #000000; /* שחור */
+    color: #ffffff;
+    border-top: 2px solid #008080;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .btn-secondary {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #008080;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #008080;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  /* Modal Full Width */
+  .full-width {
+    width: 100%;
+  }
+  

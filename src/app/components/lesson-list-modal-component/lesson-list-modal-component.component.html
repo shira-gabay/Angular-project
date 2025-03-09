@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h5 class="modal-title">רשימת השיעורים</h5>
+  <button type="button" class="close" (click)="dialogRef.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  @if(lessons.length>0) {
+    <ul>
+      @for(lesson of lessons;track lesson) {
+        <li>{{ lesson.title }}</li>
+      }
+    </ul>
+  } @else {
+    <p>אין שיעורים זמינים.</p>
+  }
+</div>
+<button mat-raised-button color="accent" (click)="openAdLessoneDialog()">
+  Add Lesson
+</button>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="dialogRef.close()">סגור</button>
+</div>

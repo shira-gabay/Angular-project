@@ -15,6 +15,6 @@ export interface Course{
 export interface Lesson{
     lessonId: number;
     title: string;
-    contant: string;
+    content: string;
     courseId: number;
 }

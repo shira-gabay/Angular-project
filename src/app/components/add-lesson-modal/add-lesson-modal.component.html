@@ -1,0 +1,38 @@
+
+<div class="modal-header">
+    <h5 class="modal-title">Add Lesson</h5>
+    <button type="button" class="close" (click)="closeAddLessonModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="addLessonForm" (ngSubmit)="submitLesson()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Lesson Title</mat-label>
+        <input matInput formControlName="title" placeholder="Enter lesson title">
+        @if(addLessonForm.get('title')?.hasError('required') && addLessonForm.get('title')?.touched) {
+          <mat-error>Title is required.</mat-error>
+        }
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Lesson Content</mat-label>
+        <textarea matInput formControlName="content" placeholder="Enter lesson content"></textarea>
+        @if(addLessonForm.get('content')?.hasError('required') && addLessonForm.get('content')?.touched) {
+          <mat-error>Content is required.</mat-error>
+        }
+      </mat-form-field>
+      
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="addLessonForm.invalid">
+          Add Lesson
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeAddLessonModal()">Close</button>
+  </div>
+  

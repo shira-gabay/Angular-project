@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import { UserService } from './user.service';
+import { Lesson } from '../types/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,9 @@ export class LessonService {
 
   private apiUrl = 'http://localhost:3000/api/courses';
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient,public userService:UserService) { }
+ lessons: Lesson[] = [];
+ currenrLesson: Lesson = { lessonId: 0, title: "", content: "", courseId: 0 };
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem('token'); 
     return new HttpHeaders({
@@ -18,17 +21,38 @@ export class LessonService {
       'Authorization': token ? `Bearer ${token}` : ''
     });
   }
-
+ 
   getLessons(courseId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${courseId}/lessons`, { headers: this.getHeaders() });
+
+   console.log(localStorage.getItem('token'));
+  
+  
+   const res= this.http.get(`${this.apiUrl}/${courseId}/lessons`,
+     {    headers: { 'Authorization': `Bearer ${this.userService.token}` }
+    }).pipe(
+      tap((response) => {
+        
+        console.log("Response in service (getAllCourses):", response);
+      })
+    );
+    return res;;
   }
 
   getLesson(courseId: number, lessonId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, { headers: this.getHeaders() });
+    return this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`,
+       { headers: this.getHeaders() });
   }
 
   createLesson(courseId: number, lessonData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${courseId}/lessons`, lessonData, { headers: this.getHeaders() });
+    const res= this.http.post(`${this.apiUrl}/${courseId}/lessons`, lessonData,
+      {    headers: { 'Authorization': `Bearer ${this.userService.token}` }
+    }).pipe(
+      tap((response) => {
+        
+        console.log("Response in service (getAllCourses):", response);
+      })
+    );
+    return res;;
   }
 
   updateLesson(courseId: number, lessonId: number, lessonData: any): Observable<any> {

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursService } from '../../servies/cours.service';
-import { Course } from '../../types/user';
+import { Course, Lesson } from '../../types/user';
 import { UserService } from '../../servies/user.service';
 import { log } from 'node:console';
 import { AddCoursComponent } from "../add-cours/add-cours.component";
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update-course/update.component';
+import { LessonListModalComponentComponent } from '../lesson-list-modal-component/lesson-list-modal-component.component';
 @Component({
   selector: 'app-all-courses',
   standalone: true,
@@ -15,7 +16,8 @@ import { UpdateComponent } from '../update-course/update.component';
 })
 export class AllCoursesComponent implements OnInit{
   currentCourses:Course[] = [];
-  
+  showLessonList: boolean = false;
+  lessons: Lesson[] = [];
   constructor(private coursService:CoursService,private userServise:UserService,private dialog: MatDialog) { 
     console.log("constructor");
     this.getCourses();
@@ -116,5 +118,17 @@ export class AllCoursesComponent implements OnInit{
       );
     }
     
-    
+openDialogleLessonList(courseId: number): void {
+  const dialogRef = this.dialog.open(LessonListModalComponentComponent, {
+    width: '400px',
+    data: { courseId } 
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The lesson list dialog was closed', result);
+  });
+}
+addLesson(courseId: number): void {
+
+}
 }

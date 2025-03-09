@@ -16,8 +16,7 @@ export class CoursService {
   courses: Course[] = [];
   currenrCours: Course = { id: 0, title: "", description: "", teacherId: 0 };
   token: string = '';
-  
-  // קבלת כל הקורסים
+
   getAllCourses(): Observable<Course[]> {
     const res = this.http.get<Course[]>(this.apiUrl, {
       headers: { 'Authorization': `Bearer ${this.userServise.token}` }
@@ -30,7 +29,7 @@ export class CoursService {
     return res;
   }
   
-  // קבלת קורס לפי מזהה (תיקון: לא כולל /unenroll)
+ 
   getCourseById(courseId: number): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/${courseId}`, {
       headers: { 'Authorization': `Bearer ${this.userServise.token}` }
@@ -45,7 +44,7 @@ export class CoursService {
     );
   }
   
-  // יצירת קורס חדש (למורים בלבד)
+
   createCourse(courseData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}`, courseData, {
       headers: { 'Authorization': `Bearer ${this.userServise.token}` }
@@ -55,15 +54,14 @@ export class CoursService {
       })
     );
   }
-  
-  // עדכון קורס קיים (למורים בלבד)
+
   updateCourse(id: number, updates: Partial<Course>): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, updates, {
       headers: { 'Authorization': `Bearer ${this.userServise.token}` }
     });
   }
   
-  // מחיקת קורס (למורים בלבד)
+
   deleteCourse(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`, {
       headers: { 'Authorization': `Bearer ${this.userServise.token}` }

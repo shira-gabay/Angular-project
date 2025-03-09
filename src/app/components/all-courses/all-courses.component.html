@@ -1,27 +1,35 @@
-hello all courses
-@for(course of currentCourses;track course){
+<h2>All Courses</h2>
+@for(course of currentCourses; track course){
   <div class="course">
-    <h2>{{course.title}}</h2>
-    <p>{{course.description}}</p>
-    <div >
-        <button  mat-raised-button color="primary" (click)="join(course.id)">Join</button>
-        <button mat-raised-button color="warn" (click)="exit(course.id)">Exit</button>
-        <div class="update-course-button">
-          <button mat-raised-button color="accent" (click)="openUpdateCourseDialog(course,course.id)">
-            update Course
-          </button>
-        </div>
-        <div class="delete-course-button">
-          <button mat-raised-button color="accent" (click)="deleteCourse(course.id)">
-            delete  Course
-          </button>
-        </div>
+    <h2>{{ course.title }}</h2>
+    <p>{{ course.description }}</p>
+    <div class="buttons">
+ 
+      <button mat-raised-button color="primary" (click)="join(course.id)">Join</button>
+
+      <button mat-raised-button color="warn" (click)="exit(course.id)">Exit</button>
+
+      <button mat-raised-button color="accent" (click)="openUpdateCourseDialog(course, course.id)">
+        Update Course
+      </button>
+
+      <button mat-raised-button color="accent" (click)="deleteCourse(course.id)">
+        Delete Course
+      </button>
+
+      <button mat-raised-button color="primary" (click)="openDialogleLessonList(course.id)">
+        View Lesson List
+      </button>
     </div>
   </div>
 }
+
 <div class="add-course-button">
   <button mat-raised-button color="accent" (click)="openAddCourseDialog()">
     Add Course
   </button>
 </div>
-<!-- <button (click)="createCourse()">יצירת קורס</button> -->
+
+
+
+

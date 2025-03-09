@@ -1,28 +1,93 @@
-.full-width {
-    width: 100%;
-  }
-  
-  form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  mat-form-field {
-    margin-bottom: 16px;
-  }
-  
-  button[mat-raised-button] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
+
+body {
+  background-color: #f4f4f4; 
+  color: #333333; 
+  font-family: 'Arial', sans-serif;
+}
+
+
+h2 {
+  text-align: center;
+  color: #00ced1;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.close {
+  color: #ffffff;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+form {
+  background-color: #ffffff; 
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #00ced1; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.mat-form-field label {
+  color: #333333;
+}
+
+
+.mat-form-field .mat-form-field-outline {
+  border-color: #00ced1; 
+}
+
+.mat-input-element {
+  color: #333333; 
+}
+
+
+.mat-error {
+  color: #ff0000; 
+  font-size: 0.875rem;
+}
+
+
+button {
+  background-color: #00ced1; 
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; 
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #008b8b; 
+}
+
+
+button:disabled {
+  background-color: #d3d3d3; 
+}
+
+
+textarea {
+  resize: none;
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}

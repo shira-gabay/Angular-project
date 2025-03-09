@@ -1,0 +1,104 @@
+/* גוף המודל */
+body {
+    background-color: #000000; /* רקע שחור לדף */
+    color: #ffffff; /* צבע טקסט לבן */
+    font-family: Arial, sans-serif; /* גופן פשוט ונקי */
+  }
+  
+  /* כותרת המודל */
+  .modal-header {
+    background-color: #008b8b; /* טורכיז כהה */
+    color: #ffffff; /* טקסט לבן */
+    border-bottom: 3px solid #00ced1; /* קו תפר בהיר */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* כפתור סגירה */
+  .close {
+    color: #ffffff;
+    font-size: 1.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #00ced1;
+  }
+  
+  /* גוף המודל */
+  .modal-body {
+    background-color: #1a1a1a; /* רקע כהה יותר */
+    padding: 20px;
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  /* רשימה */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #333333; /* רקע כהה יותר לרשימה */
+    color: #00ced1; /* טקסט טורכיז */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  li:hover {
+    background-color: #00ced1; /* ברקע טורכיז כאשר מרחפים מעל */
+    color: #ffffff; /* טקסט לבן */
+    cursor: pointer;
+  }
+  
+  /* כפתור להוספת שיעור */
+  button {
+    background-color: #00ced1; /* טורכיז */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #008b8b; /* טורכיז כהה */
+  }
+  
+  /* כפתור סגור */
+  .modal-footer {
+    background-color: #008b8b;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-footer button {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .modal-footer button:hover {
+    background-color: #00ced1; /* טורכיז */
+  }
+  
