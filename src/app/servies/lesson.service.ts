@@ -39,8 +39,16 @@ export class LessonService {
   }
 
   getLesson(courseId: number, lessonId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`,
-       { headers: this.getHeaders() });
+    const res= this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`,
+      {    headers: { 'Authorization': `Bearer ${this.userService.token}` }
+    }).pipe(
+      tap((response) => {
+        
+        console.log("Response in service (getAllCourses):", response);
+      })
+    );
+    return res;;
+     
   }
 
   createLesson(courseId: number, lessonData: any): Observable<any> {
@@ -56,10 +64,26 @@ export class LessonService {
   }
 
   updateLesson(courseId: number, lessonId: number, lessonData: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, lessonData, { headers: this.getHeaders() });
+    const res= this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, lessonData,
+      {    headers: { 'Authorization': `Bearer ${this.userService.token}` }
+    }).pipe(
+      tap((response) => {
+        
+        console.log("Response in service (getAllCourses):", response);
+      })
+    );
+    return res;;
   }
 
   deleteLesson(courseId: number, lessonId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, { headers: this.getHeaders() });
+    const res= this.http.delete(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, 
+      {    headers: { 'Authorization': `Bearer ${this.userService.token}` }
+    }).pipe(
+      tap((response) => {
+        
+        console.log("Response in service (getAllCourses):", response);
+      })
+    );
+    return res;;
   }
 }

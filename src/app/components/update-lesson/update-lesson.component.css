@@ -1,0 +1,88 @@
+/* גוף המודל */
+body {
+    background-color: #f8f8f8; /* רקע בהיר - אפור בהיר */
+    color: #333333; /* טקסט כהה */
+    font-family: Arial, sans-serif; /* גופן פשוט */
+  }
+  
+  /* כותרת המודל */
+  h2 {
+    text-align: center;
+    color: #00ced1; /* צבע טורכיז */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* כפתור סגירה */
+  .close {
+    color: #ffffff;
+    font-size: 1.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  /* טופס */
+  form {
+    background-color: #ffffff; /* רקע לבן */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00ced1; /* גבול טורכיז */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* הצללה עדינה */
+  }
+  
+  /* שדות הטופס */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .mat-form-field label {
+    color: #333333; /* צבע טקסט כהה לכותרת השדה */
+  }
+  
+  /* שדה עם צבע טורכיז */
+  .mat-form-field .mat-form-field-outline {
+    border-color: #00ced1; /* גבול טורכיז */
+  }
+  
+  .mat-input-element {
+    color: #333333; /* טקסט כהה בשדות */
+  }
+  
+  /* שגיאות בטופס */
+  .mat-error {
+    color: #ff0000; /* צבע אדום לשגיאות */
+    font-size: 0.875rem;
+  }
+  
+  /* כפתור עדכון */
+  button {
+    background-color: #00ced1; /* רקע טורכיז */
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%; /* כפתור רוחב מלא */
+  }
+  
+  button:hover {
+    background-color: #008b8b; /* טורכיז כהה בעת ריחוף */
+  }
+  
+  /* כפתור במצב disabled */
+  button:disabled {
+    background-color: #d3d3d3; /* צבע אפור כאשר הכפתור לא פעיל */
+  }
+  
+  /* הוספת רווחים בין השדות */
+  .button-group {
+    display: flex;
+    justify-content: center;
+  }
+  

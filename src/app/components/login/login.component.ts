@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomePageComponent } from "../home-page/home-page.component";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   imports: [MatButtonModule, MatDividerModule, MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDialogModule, HomePageComponent],
@@ -21,7 +22,9 @@ export class LoginComponent implements OnInit{
   showForm:boolean = false;
   loginInForm!:FormGroup;
   @Output() loginSubmit = new EventEmitter<any>();
-  constructor(private formBuilder:FormBuilder) { 
+  constructor(private formBuilder:FormBuilder, private router : Router
+
+  ) { 
   this.loginInForm = this.formBuilder.group({
   email: ['', [Validators.required, Validators.email]],  
   password: ['', [Validators.required, Validators.minLength(6)]]
@@ -37,7 +40,8 @@ export class LoginComponent implements OnInit{
   chekSubmit():void{
     this.showForm = true;
     console.log("true");
-   
+    
+
   }
   get valid():{[key:string]:AbstractControl}
   {
