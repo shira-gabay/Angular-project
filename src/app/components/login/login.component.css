@@ -1,75 +1,118 @@
-.example-button-row {
-    display: table-cell;
-    max-width: 800px;
-    padding: 7px;;
+/* 🎨 עיצוב כללי לדף */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3fdfd, #a6e3e9);
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-/* עיצוב לכפתור הראשוני */
-.example-button-row {
-    text-align: left;
-    margin: 20px;
+
+/* 📦 קונטיינר מרכזי */
+.auth-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 420px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* 📝 עיצוב טופס ההתחברות */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔲 שדות טופס */
+mat-form-field.full-width,
+input[matInput],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #30cfd0;
+  box-shadow: 0 0 8px rgba(48, 207, 208, 0.5);
+}
+
+/* 🚨 הודעות שגיאה */
+mat-error,
+div.error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* ✨ כפתורים מעוצבים */
+button {
+  background: linear-gradient(135deg, #30cfd0, #38d4cf);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2aafc1, #26a69a);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎭 אפקט מעבר צבע */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: left 0.5s ease-in-out;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* 🏁 מצב כפתור מושבת */
+button:disabled {
+  background: #b5b5b5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ✨ אנימציית כניסה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  /* עיצוב לטופס ההרשמה */
-  form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* עיצוב ל- mat-form-field */
-  mat-form-field.full-width {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  /* עיצוב לשדות הקלט */
-  input[matInput],
-  input[type="email"],
-  input[type="password"],
-  select {
-    width: 100%;
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* עיצוב לתוויות */
-  mat-form-field > mat-label,
-  label {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  /* עיצוב הודעות השגיאה */
-  mat-error,
-  div.error {
-    color: #d32f2f;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
-  /* עיצוב לכפתור השליחה */
-  form button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: #00dddd;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button[type="submit"]:hover {
-    background-color: #00dddd;
-    color:#444;
-  }
-  
+}
