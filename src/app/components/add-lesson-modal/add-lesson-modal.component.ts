@@ -2,19 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LessonService } from '../../servies/lesson.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { log } from 'console';
-import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'app-add-lesson-modal',
-  imports: [MatSelectModule,MatButtonModule, MatDividerModule, MatIconModule,MatFormFieldModule,MatInputModule,MatDialogModule,ReactiveFormsModule,ReactiveFormsModule],
+  imports: [MatSelectModule,ReactiveFormsModule],
   templateUrl: './add-lesson-modal.component.html',
   styleUrl: './add-lesson-modal.component.css'
 })

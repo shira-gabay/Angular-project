@@ -2,15 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoursService } from '../../servies/cours.service';
 import { UserService } from '../../servies/user.service';
-import { Course } from '../../types/user';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { log } from 'console';
-import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
@@ -18,7 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'app-update',
   standalone: true,
-  imports: [MatSelectModule,MatButtonModule, MatDividerModule, MatIconModule,MatFormFieldModule,MatInputModule,MatDialogModule,ReactiveFormsModule,ReactiveFormsModule],
+  imports: [MatSelectModule,ReactiveFormsModule],
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css'] 
 })

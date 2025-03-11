@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CoursService } from '../../servies/cours.service';
 import { Course, Lesson } from '../../types/user';
 import { UserService } from '../../servies/user.service';
-import { log } from 'node:console';
 import { AddCoursComponent } from "../add-cours/add-cours.component";
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update-course/update.component';

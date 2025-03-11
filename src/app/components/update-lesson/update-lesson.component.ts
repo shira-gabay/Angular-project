@@ -4,20 +4,13 @@ import { CoursService } from '../../servies/cours.service';
 import { UserService } from '../../servies/user.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LessonService } from '../../servies/lesson.service';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { log } from 'console';
-import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Lesson } from '../../types/user';
+
 
 @Component({
   selector: 'app-update-lesson',
-  imports: [MatIconModule,MatButtonModule, MatDividerModule, MatFormFieldModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
+  imports: [ MatFormFieldModule, ReactiveFormsModule],
   templateUrl: './update-lesson.component.html',
   styleUrl: './update-lesson.component.css'
 })

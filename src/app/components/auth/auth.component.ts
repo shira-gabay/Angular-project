@@ -3,7 +3,7 @@ import { UserService } from "../../servies/user.service"
 import { User } from '../../types/user';
 import { SignComponent } from "../sign/sign.component";
 import { LoginComponent } from "../login/login.component";
-import { log } from 'node:console';
+
 
 import { Router } from '@angular/router';
 @Component({

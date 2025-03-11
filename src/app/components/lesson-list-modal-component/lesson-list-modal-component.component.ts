@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../servies/user.service';
 import { Lesson } from '../../types/user';
 import { AddLessonModalComponent } from '../add-lesson-modal/add-lesson-modal.component';
-import { UpdateComponent } from '../update-course/update.component';
 import { UpdateLessonComponent } from '../update-lesson/update-lesson.component';
 import { DetailsLessonComponent } from '../details-lesson/details-lesson.component';
 
