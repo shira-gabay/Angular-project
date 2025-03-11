@@ -4,11 +4,11 @@ import { User } from '../../types/user';
 import { SignComponent } from "../sign/sign.component";
 import { LoginComponent } from "../login/login.component";
 import { log } from 'node:console';
-import { HomePageComponent } from "../home-page/home-page.component";
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-auth',
-  imports: [SignComponent, LoginComponent, HomePageComponent],
+  imports: [SignComponent, LoginComponent],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
@@ -20,6 +20,8 @@ export class AuthComponent implements OnInit {
   userid: number = 0;
   namee: string = '';
   isSend: boolean = false;
+  isLogin1:boolean=false;
+  isSign1:boolean=false;
   ngOnInit() {
   }
   createUser(user: User): void {
@@ -43,7 +45,7 @@ export class AuthComponent implements OnInit {
   handleSignSubmit(formData: User): void {
     this.createUser(formData)
     this.isLogin = true;
-
+    
   }
   handleLoginSubmit(email: string, password: string): void {
     this.userService.loginUser(email, password).subscribe(() => {
@@ -59,7 +61,10 @@ export class AuthComponent implements OnInit {
       console.log(this.avattarletter);
     });
   }
-
+  nevigateCourse():void{
+    this.router.navigate(['/all-courses']);
+   }
   navigateToLogin(): void {
     this.router.navigate(['/login']);
-}}
+}
+}

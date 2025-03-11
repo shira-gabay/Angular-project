@@ -9,26 +9,20 @@
   @if(lessons.length>0) {
     <ul>
       @for(lesson of lessons;track lesson) {
-        <li>{{ lesson.title }} <button class="deleteandUpdate"  (click)="DeleteLesson(lesson.id)">
-          Delete 
-        </button> <button class="deleteandUpdate"  (click)="updateLessonDialog(lesson)">
-          Update 
-        </button>
-        <button class="deleteandUpdate" (click)="getLessonAllDialog(lesson.title,lesson.content)">
-          View ditals of Lesson 
-        </button>
-      
-      </li>
-        
+        <li>
+          {{ lesson.title }}
+          <span class="material-icons icon" (click)="DeleteLesson(lesson.id)">delete</span>
+          <span class="material-icons icon" (click)="updateLessonDialog(lesson)">edit</span>
+          <span class="material-icons icon" (click)="getLessonAllDialog(lesson.title, lesson.content)">visibility</span>
+        </li>
       }
     </ul>
   } @else {
     <p>אין שיעורים זמינים.</p>
   }
 </div>
-<button id="AddLesson"  (click)="openAdLessoneDialog()">
-  Add Lesson
-</button>
+
+<span class="material-icons add-icon" (click)="openAdLessoneDialog()">add_circle</span>
 
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" (click)="dialogRef.close()">סגור</button>

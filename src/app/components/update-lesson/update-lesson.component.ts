@@ -96,4 +96,5 @@ export class UpdateLessonComponent {
       this.updateForm.markAllAsTouched();
     }
   }
+
 }

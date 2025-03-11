@@ -28,7 +28,7 @@
     </mat-form-field>
       
         <div>
-        <button (click)="cheklogin()" type="submit">send</button>
+        <button (click)="cheklogin()" type="submit" [disabled]="loginInForm.invalid">send</button>
       </div>
     </mat-dialog-actions>
     </form>

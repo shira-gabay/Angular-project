@@ -8,11 +8,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { HomePageComponent } from "../home-page/home-page.component";
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
-  imports: [MatButtonModule, MatDividerModule, MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDialogModule, HomePageComponent],
+  imports: [MatButtonModule, MatDividerModule, MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -50,6 +49,7 @@ export class LoginComponent implements OnInit{
   cheklogin():void{
     this.showForm=false;
     this.isSend=true;
+   
   }
   }
 

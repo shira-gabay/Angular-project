@@ -74,6 +74,8 @@ export class LessonListModalComponentComponent implements OnInit {
   }
 
   openAdLessoneDialog(): void {
+    window.history.pushState({}, '', '/:'+this.data.courseId+'/add-lesson:/'); 
+  
     const dialogRef = this.dialog.open(AddLessonModalComponent, {
       width: '400px',
       data: { courseId: this.data.courseId }
@@ -81,8 +83,20 @@ export class LessonListModalComponentComponent implements OnInit {
 
 
     });
+    dialogRef.afterClosed().subscribe(() => {
+      window.history.pushState({}, '', '/lessons:/'+this.data.courseId); 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The add course dialog was closed', result);
+      if (result) {
+      
+        this.getLessons();
+      }
+    });
   }
   updateLessonDialog(currentlesson: Lesson): void {
+    window.history.pushState({}, '', '/:'+this.data.courseId+'/update-lesson:/'+currentlesson.lessonId); 
+  
     const dialogRef = this.dialog.open(UpdateLessonComponent, {
       width: '400px',
       data: { ...currentlesson, courseId: this.data.courseId }
@@ -91,6 +105,9 @@ export class LessonListModalComponentComponent implements OnInit {
       if (result) {
         this.updateLesson(currentlesson.lessonId, result);
       }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      window.history.pushState({}, '', '/lessons:/'+this.data.courseId); 
     });
   }
   addLesson(courseId: number): void {

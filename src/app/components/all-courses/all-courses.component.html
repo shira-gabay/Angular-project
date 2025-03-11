@@ -4,32 +4,25 @@
     <h2>{{ course.title }}</h2>
     <p>{{ course.description }}</p>
     <div class="buttons">
- 
-      <button mat-raised-button color="primary" (click)="join(course.id)">Join</button>
+      <!-- אייקון הצטרפות -->
+      <span class="icon material-icons join-icon" (click)="join(course.id)">person_add</span>
 
-      <button mat-raised-button color="warn" (click)="exit(course.id)">Exit</button>
+      <!-- אייקון יציאה -->
+      <span class="icon material-icons exit-icon" (click)="exit(course.id)">logout</span>
 
-      <button mat-raised-button color="accent" (click)="openUpdateCourseDialog(course, course.id)">
-        Update Course
-      </button>
+      <!-- אייקון עדכון -->
+      <span class="icon material-icons update-icon" (click)="openUpdateCourseDialog(course, course.id)">edit</span>
 
-      <button mat-raised-button color="accent" (click)="deleteCourse(course.id)">
-        Delete Course
-      </button>
+      <!-- אייקון מחיקה -->
+      <span class="icon material-icons delete-icon" (click)="deleteCourse(course.id)">delete</span>
 
-      <button mat-raised-button color="primary" (click)="openDialogleLessonList(course.id)">
-        View Lesson List
-      </button>
+      <!-- אייקון צפייה בשיעורים -->
+      <span class="icon material-icons lessons-icon" (click)="openDialogleLessonList(course.id)">visibility</span>
     </div>
   </div>
 }
 
+<!-- כפתור הוספת קורס -->
 <div class="add-course-button">
-  <button mat-raised-button color="accent" (click)="openAddCourseDialog()">
-    Add Course
-  </button>
+  <span class="icon material-icons add-icon" (click)="openAddCourseDialog()">add_circle</span>
 </div>
-
-
-
-

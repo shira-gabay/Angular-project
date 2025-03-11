@@ -1,34 +1,119 @@
-.avatar {
-    position: absolute;      /* מיקום מוחלט */
-    top: 20px;               /* 20 פיקסלים מהחלק העליון */
-    left: 20px;              /* 20 פיקסלים מהצד השמאלי */
-    background: linear-gradient(135deg, #333, #555);
-    color: #40E0D0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    margin: 20px auto;       /* אם יש צורך, אפשר להסיר margin כדי למקם במדויק */
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-    margin-bottom: 20px;
+/* 🌟 רקע הדף - יוקרתי ובהיר */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e3fdfd, #cbf1f5, #a6e3e9);
+  color: #2c3e50;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
 
+/* 📦 תיבה מרכזית */
+.auth-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
   }
-  .auth-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  .avatar:hover {
-    transform: scale(0.85);
-    background: linear-gradient(135deg, #40E0D0, #008080);
-    color: black;
+}
+
+/* 🤩 אוואטר מגניב עם אפקט ריחוף */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38d4cf, #30cfd0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.avatar:hover {
+  transform: rotate(10deg);
+}
+
+/* ✨ כפתורים משודרגים */
+button {
+  background: linear-gradient(135deg, #30cfd0, #38d4cf);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2aafc1, #26a69a);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎭 אנימציית כניסה לכפתור */
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: left 0.5s ease-in-out;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+/* 📜 טופס ההרשמה וההתחברות - מסודר יפה */
+.register-container {
+  background: transparent;
+}
+
+.register {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
   }
-  .register {
-    margin-bottom: 20px;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
+}

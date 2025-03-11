@@ -1,104 +1,165 @@
-
+/* 🌊 רקע גלים ברור עם אנימציה */
 body {
-  background-color: #f0f8ff; 
-  color: #333; 
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-  margin: 0;
+  background: linear-gradient(180deg, #b2ebf2 0%, #80deea 50%, #4dd0e1 100%);
+  background-attachment: fixed;
+  font-family: 'Rubik', sans-serif; /* גופן יותר מודרני */
+  color:#009688; /* טורכיז כהה */
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 🎭 יצירת גלים עם SVG */
+body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: url('https://svgshare.com/i/11SL.svg') repeat-x;
+  background-size: 100% 100%;
+  opacity: 0.7;
+  animation: waveAnimation 6s infinite linear;
+  z-index: -1;
 }
 
 
-button {
-  background-color: #00bcd4; 
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 5px;
-}
 
-button:hover {
-  background-color: #008c9e; 
-  transform: scale(1.05);
-}
-
-button:disabled {
-  background-color: #b0bec5; 
-  cursor: not-allowed;
-}
-
-
+/* 📚 תיבות הקורסים בעיצוב מודרני */
 .course {
-  background-color: #ffffff; 
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-in-out;
+  position: relative;
 }
 
-.course h3 {
-  color: #00796b; 
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+.course:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-.course p {
-  color: #004d40;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-
-.modal-content {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-ul.lesson-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul.lesson-list li {
-  padding: 10px;
-  background-color: #f1f8e9;
-  margin: 5px 0;
-  border-radius: 8px;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-ul.lesson-list li::before {
-
-  margin-right: 10px;
-}
-
-
+/* 🎓 כותרות דף מודרניות */
 h2 {
-  color: #004d40;
-  font-size: 2.2rem;
-  text-align: center;
+  font-size: 2.4rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  color: #004d40; /* טורכיז כהה */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-in-out;
 }
 
+/* ✨ אפקט ניאון לטקסט */
+h2, p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #009688, #004d40);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+/* 🌟 עיצוב אייקונים במקום כפתורים */
+.icon {
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 12px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+/* 🎭 עיצוב אייקונים לכל פעולה */
+.join-icon {
+  color: #00796b;
+  background: rgba(0, 150, 136, 0.2);
+}
+.join-icon:hover {
+  color: #004d40;
+  background: rgba(0, 150, 136, 0.4);
+  transform: scale(1.3);
+}
+
+.exit-icon {
+  color: #d32f2f;
+  background: rgba(244, 67, 54, 0.2);
+}
+.exit-icon:hover {
+  color: #b71c1c;
+  background: rgba(244, 67, 54, 0.4);
+  transform: scale(1.3);
+}
+
+.update-icon {
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.2);
+}
+.update-icon:hover {
+  color: #f57c00;
+  background: rgba(255, 152, 0, 0.4);
+  transform: scale(1.3);
+}
+
+.delete-icon {
+  color: #c62828;
+  background: rgba(198, 40, 40, 0.2);
+}
+.delete-icon:hover {
+  color: #b71c1c;
+  background: rgba(198, 40, 40, 0.4);
+  transform: scale(1.3);
+}
+
+.lessons-icon {
+  color: #6200ea;
+  background: rgba(98, 0, 234, 0.2);
+}
+.lessons-icon:hover {
+  color: #4500c4;
+  background: rgba(98, 0, 234, 0.4);
+  transform: scale(1.3);
+}
+
+/* ➕ הוספת קורס */
 .add-course-button {
-  text-align: center;
   margin-top: 20px;
+  animation: fadeInUp 1s ease-in-out;
 }
 
-.add-course-button button {
-  font-size: 1.2rem;
-  padding: 14px 28px;
-  border-radius: 25px;
+.add-icon {
+  font-size: 50px;
+  color: #00796b;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.add-icon:hover {
+  color: #004d40;
+  transform: scale(1.3);
+}
+
+/* 🎭 אנימציות */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
